@@ -5,6 +5,15 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100 },
+  },
+} as const;
+
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -50,20 +59,11 @@ export default function ContactPage() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 100 },
-    },
-  };
-
   return (
     <main className="min-h-screen bg-zinc-950 pt-28 pb-16 text-foreground relative overflow-hidden">
-      {/* Background Decorative Blurs */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+      {/* Background Decorative Blurs - Optimized Canonical Sizing */}
+      <div className="absolute top-0 left-1/4 w-125 h-125 bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-100 h-100 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -71,9 +71,9 @@ export default function ContactPage() {
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400"
+            className="text-4xl sm:text-5xl font-heading font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white via-zinc-200 to-zinc-400"
           >
-            Let's Start a Conversation
+            Lets Start a Conversation
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -185,7 +185,7 @@ export default function ContactPage() {
             {/* Business Hours Summary Card */}
             <motion.div
               variants={itemVariants}
-              className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-white/5"
+              className="p-6 rounded-2xl bg-linear-to-br from-primary/10 to-transparent border border-white/5"
             >
               <h4 className="font-semibold text-primary mb-2">
                 ⚡ Business Hours

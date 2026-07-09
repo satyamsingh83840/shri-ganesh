@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import products from "@/data/products";
-
 import ProductInfo from "@/components/products/product-info";
 import Specifications from "@/components/products/specifications";
 import RelatedProducts from "@/components/products/related-products";

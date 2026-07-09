@@ -10,7 +10,7 @@ export default function NotFound() {
         <h2 className="mt-6 text-3xl font-bold">Product Not Found</h2>
 
         <p className="mt-4 text-muted-foreground">
-          The product you're looking for doesn't exist.
+          The product you are looking for does not exist.
         </p>
 
         <Link href="/products">
