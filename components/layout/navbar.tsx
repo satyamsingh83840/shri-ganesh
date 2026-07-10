@@ -40,6 +40,13 @@ export default function Navbar() {
     show: { opacity: 1, x: 0 },
   };
 
+  // Replace with your company's actual WhatsApp number (include country code, no "+" or spaces)
+  const whatsappNumber = "919999999999";
+  const encodedMessage = encodeURIComponent(
+    "Hello Shri Ganesh Enterprises, I was exploring your website and wanted to know more about your products.",
+  );
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
   return (
     <>
       <header
@@ -51,7 +58,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between gap-4">
-            {/* Logo - Now completely visible on mobile */}
+            {/* Logo */}
             <Link
               href="/"
               className="group flex items-center gap-2 sm:gap-3 font-heading font-bold"
@@ -86,11 +93,13 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* CTA */}
+            {/* Desktop CTA - Now launches WhatsApp */}
             <div className="hidden md:block">
-              <Button className="rounded-full px-6 transition-transform hover:scale-105 active:scale-95">
-                Explore Products
-              </Button>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full px-6 transition-transform hover:scale-105 active:scale-95">
+                  Whatsapp
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -167,13 +176,16 @@ export default function Navbar() {
                 ))}
               </motion.nav>
 
+              {/* Mobile CTA - Now launches WhatsApp & closes menu panel */}
               <div className="mt-10">
-                <Button
-                  className="w-full rounded-full"
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Explore Products
-                </Button>
+                  <Button className="w-full rounded-full">Whatsapp</Button>
+                </a>
               </div>
             </motion.aside>
           </>
