@@ -1,21 +1,20 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search, X, SlidersHorizontal, ShoppingBag } from "lucide-react";
 import products from "@/data/products";
 import ProductCard from "@/components/products/product-card";
 
 const categories = [
   "All",
-  "Ceiling Fan",
-  "BLDC Fan",
-  "Wall Fan",
   "Exhaust Fan",
-  "Pedestal Fan",
+  "Ventilation Fan",
   "Table Fan",
+  "Adjust Fan",
+  "Wall/Table Fan",
 ];
 
-// 1. Updated Type to exactly match Record<string, string> expected by ProductCard
 type Product = {
   id: number;
   slug: string;
@@ -36,12 +35,37 @@ type Product = {
     Finish?: string;
     Speed?: string;
     [key: string]: string | undefined;
-  } & Record<string, string>; // Intersected with Record to satisfy strict components
+  } & Record<string, string>;
 };
 
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // 1. Determine starting category parameter cleanly from URL string targets
+  const queryCategory = searchParams.get("category");
+  const initialCategory = useMemo(() => {
+    if (queryCategory) {
+      const normalizedQuery = queryCategory.endsWith("s")
+        ? queryCategory.slice(0, -1)
+        : queryCategory;
+
+      const matchedCategory = categories.find(
+        (c) => c.toLowerCase() === normalizedQuery.toLowerCase(),
+      );
+      if (matchedCategory) return matchedCategory;
+    }
+    return "All";
+  }, [queryCategory]);
+
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [prevQueryCategory, setPrevQueryCategory] = useState(queryCategory);
+
+  // 2. Safely adjust state directly during render when the URL query changes (bypasses ESLint effect warnings)
+  if (queryCategory !== prevQueryCategory) {
+    setPrevQueryCategory(queryCategory);
+    setSelectedCategory(initialCategory);
+  }
 
   const filteredProducts = useMemo(() => {
     return (products as unknown as Product[]).filter((product) => {
@@ -139,7 +163,6 @@ export default function ProductsPage() {
       <section className="py-12 sm:py-16">
         <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-8">
           {filteredProducts.length === 0 ? (
-            /* Minimalist Empty State Box */
             <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-200 dark:border-neutral-800 p-16 text-center max-w-md mx-auto">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neutral-100 dark:bg-neutral-900 text-neutral-400">
                 <ShoppingBag className="h-5 w-5" />
@@ -154,7 +177,6 @@ export default function ProductsPage() {
             </div>
           ) : (
             <>
-              {/* Count Banner */}
               <div className="mb-8 flex items-center justify-between">
                 <p className="text-xs font-bold uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
                   Showing{" "}
@@ -167,7 +189,6 @@ export default function ProductsPage() {
                 </p>
               </div>
 
-              {/* Grid System with subtle scale hover layout */}
               <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {filteredProducts.map((product) => (
                   <div
@@ -183,5 +204,17 @@ export default function ProductsPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950" />
+      }
+    >
+      <ProductsContent />
+    </Suspense>
   );
 }

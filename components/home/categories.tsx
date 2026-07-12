@@ -7,34 +7,30 @@ import { ArrowRight } from "lucide-react";
 
 const categories = [
   {
-    title: "Ceiling Fans",
-    image: "/images/categories/ceiling-fan.jpg",
-    description: "Elegant ceiling fans for homes and offices.",
-  },
-  {
-    title: "BLDC Fans",
-    image: "/images/categories/bldc-fan.jpg",
-    description: "Energy-efficient fans with silent performance.",
-  },
-  {
-    title: "Wall Fans",
-    image: "/images/categories/wall-fan.jpg",
-    description: "Perfect airflow for compact spaces.",
-  },
-  {
-    title: "Exhaust Fans",
+    title: "Exhaust Fan",
     image: "/images/categories/exhaust-fan.jpg",
-    description: "Fresh air solutions for kitchens and bathrooms.",
+    description: "High-suction performance for kitchen ventilation.",
   },
   {
-    title: "Pedestal Fans",
-    image: "/images/categories/pedestal-fan.jpg",
-    description: "Portable cooling for every room.",
+    title: "Ventilation Fan",
+    image: "/images/categories/ventilation-fan.jpg",
+    description: "Keep fresh air flowing in heavy-use environments.",
   },
   {
-    title: "Table Fans",
+    title: "Table Fan",
     image: "/images/categories/table-fan.jpg",
-    description: "Compact fans for study, office and bedroom.",
+    description: "Powerful cooling on demand for desks and rooms.",
+  },
+  {
+    title: "Adjust Fan",
+    image: "/images/categories/adjust-fan.jpg",
+    description:
+      "Versatile industrial layout choices with directional airflow.",
+  },
+  {
+    title: "Wall/Table Fan",
+    image: "/images/categories/wall-table-fan.jpg",
+    description: "Multi-purpose wall mounts or standard table use.",
   },
 ];
 
@@ -45,7 +41,6 @@ export default function Categories() {
       className="section-padding relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background py-16"
     >
       <div className="container-width">
-        {/* Sleek, Editorial Heading Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +63,6 @@ export default function Categories() {
           </p>
         </motion.div>
 
-        {/* Beautiful Horizontal Scroll Track */}
         <div className="flex gap-6 overflow-x-auto pb-8 pt-2 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {categories.map((category, index) => (
             <motion.div
@@ -80,10 +74,12 @@ export default function Categories() {
                 delay: index * 0.08,
                 duration: 0.5,
               }}
-              // Ensures clean widths on horizontal tracks across all screens
               className="w-[280px] sm:w-[340px] shrink-0 snap-start"
             >
-              <Link href="#products">
+              {/* Dynamic routing parameter setup */}
+              <Link
+                href={`/products?category=${encodeURIComponent(category.title)}`}
+              >
                 <div className="group overflow-hidden rounded-[2rem] border border-border/80 bg-card transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5">
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
