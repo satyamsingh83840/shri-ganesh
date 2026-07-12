@@ -15,16 +15,28 @@ const categories = [
   "Table Fan",
 ];
 
+// 1. Updated Type to exactly match Record<string, string> expected by ProductCard
 type Product = {
   id: number;
   slug: string;
   name: string;
   category: string;
   price: number;
-  image: string;
+  images: string[];
   featured?: boolean;
   bestseller?: boolean;
-  specs: string[];
+  description: string;
+  features: string[];
+  specifications: {
+    Sweep?: string;
+    Motor?: string;
+    Blades?: string;
+    Warranty?: string;
+    Voltage?: string;
+    Finish?: string;
+    Speed?: string;
+    [key: string]: string | undefined;
+  } & Record<string, string>; // Intersected with Record to satisfy strict components
 };
 
 export default function ProductsPage() {
@@ -32,7 +44,7 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProducts = useMemo(() => {
-    return (products as Product[]).filter((product) => {
+    return (products as unknown as Product[]).filter((product) => {
       const matchesCategory =
         selectedCategory === "All" || product.category === selectedCategory;
 
@@ -47,11 +59,10 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-neutral-50/50 dark:bg-neutral-950 text-foreground selection:bg-primary/10">
       {/* Editorial Hero Section */}
-      <section className="relative overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-b from-neutral-100/40 via-neutral-50/20 to-transparent py-16 sm:py-24">
-        {/* Subtle background graphic block */}
+      <section className="relative overflow-hidden border-b border-neutral-200/60 dark:border-neutral-800/60 bg-linear-to-b from-neutral-100/40 via-neutral-50/20 to-transparent py-16 sm:py-24">
         <div className="absolute right-0 top-0 -z-10 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
 
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 shadow-sm">
               Catalog 2026
@@ -59,7 +70,7 @@ export default function ProductsPage() {
 
             <h1 className="mt-6 text-4xl font-black tracking-tight sm:text-5xl md:text-6xl text-neutral-900 dark:text-neutral-50">
               Air Engineering. <br />
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Premium Fan Collection
               </span>
             </h1>
@@ -74,7 +85,7 @@ export default function ProductsPage() {
 
       {/* Floating Interactive Filter & Search Dock */}
       <section className="sticky top-0 z-40 border-b border-neutral-200/60 dark:border-neutral-800/40 bg-white/70 dark:bg-neutral-950/70 py-4 backdrop-blur-xl transition-all">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             {/* Ultra-Clean Input Box */}
             <div className="relative w-full md:max-w-sm group">
@@ -126,7 +137,7 @@ export default function ProductsPage() {
 
       {/* Products Grid & Results Status */}
       <section className="py-12 sm:py-16">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-8">
           {filteredProducts.length === 0 ? (
             /* Minimalist Empty State Box */
             <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-neutral-200 dark:border-neutral-800 p-16 text-center max-w-md mx-auto">

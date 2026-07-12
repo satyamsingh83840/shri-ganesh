@@ -11,7 +11,7 @@ type Product = {
   name: string;
   category: string;
   price: number;
-  image: string;
+  images: string[]; // Fixed: updated structural type
   description: string;
   features: string[];
   specifications: Record<string, string>;
@@ -22,6 +22,9 @@ interface ProductInfoProps {
 }
 
 export default function ProductInfo({ product }: ProductInfoProps) {
+  const primaryImage =
+    product.images?.[0] || "/images/products/placeholder.webp";
+
   return (
     <div className="grid gap-12 lg:grid-cols-2">
       {/* Image */}
@@ -30,7 +33,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8">
           <Image
-            src={product.image}
+            src={primaryImage} // Fixed
             alt={product.name}
             width={700}
             height={700}
@@ -71,7 +74,6 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               <div className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10">
                 <Check className="h-4 w-4 text-primary" />
               </div>
-
               <span>{feature}</span>
             </div>
           ))}
@@ -86,7 +88,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               buyOnWhatsApp({
                 name: product.name,
                 price: product.price,
-                image: product.image,
+                image: primaryImage, // Fixed
               })
             }
           >

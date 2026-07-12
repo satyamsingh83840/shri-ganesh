@@ -5,7 +5,11 @@ const products = [
     name: "SG Aura 1200",
     category: "BLDC Fan",
     price: 2999,
-    image: "/images/products/sg-aura.webp",
+
+    images: [
+      "/images/products/sg-aura-1.webp",
+      "/images/products/sg-aura-2.webp",
+    ],
 
     featured: true,
     bestseller: true,
@@ -37,7 +41,11 @@ const products = [
     name: "SG Elite",
     category: "Ceiling Fan",
     price: 2499,
-    image: "/images/products/sg-elite.webp",
+
+    images: [
+      "/images/products/sg-elite-1.webp",
+      "/images/products/sg-elite-2.webp",
+    ],
 
     featured: true,
     bestseller: false,

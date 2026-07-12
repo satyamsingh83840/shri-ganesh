@@ -8,9 +8,23 @@ interface Props {
   category: string;
 }
 
+// Map the accurate type locally for cross-reference processing
+type ProductField = {
+  id: number;
+  slug: string;
+  name: string;
+  category: string;
+  price: number;
+  images: string[];
+  featured?: boolean;
+  bestseller?: boolean;
+  description: string;
+  features: string[];
+  specifications: Record<string, string>;
+};
+
 export default function RelatedProducts({ currentSlug, category }: Props) {
-  // Increased slice to 5-6 since horizontal layouts look better with more content
-  const related = products
+  const related = (products as unknown as ProductField[])
     .filter(
       (product) =>
         product.slug !== currentSlug && product.category === category,
@@ -21,7 +35,6 @@ export default function RelatedProducts({ currentSlug, category }: Props) {
 
   return (
     <section className="w-full py-12 border-t border-neutral-100 dark:border-neutral-900/60">
-      {/* Header with layout tracking */}
       <div className="mb-8 flex items-end justify-between px-4 sm:px-0">
         <div>
           <h2 className="text-2xl font-black tracking-tight text-neutral-900 dark:text-neutral-50 md:text-3xl">
@@ -32,13 +45,11 @@ export default function RelatedProducts({ currentSlug, category }: Props) {
           </p>
         </div>
 
-        {/* Visual Swipe Indicator for desktop/tablet */}
         <span className="hidden sm:inline-flex text-xs font-medium text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 rounded-full">
           Swipe to explore →
         </span>
       </div>
 
-      {/* Horizontal Scroll Layout container */}
       <div className="relative w-full">
         <div className="no-scrollbar flex w-full gap-6 overflow-x-auto pb-6 pt-2 px-4 sm:px-0 snap-x snap-mandatory scroll-smooth">
           {related.map((product) => (
