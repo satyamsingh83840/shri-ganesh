@@ -9,17 +9,29 @@ import products from "@/data/products";
 import ProductCard from "@/components/products/product-card";
 import { Button } from "@/components/ui/button";
 
-interface Product {
+// 1. Updated Type mapping precisely to match the global product layout
+type Product = {
   id: number;
   slug: string;
   name: string;
   category: string;
   price: number;
-  image: string;
+  images: string[];
   featured?: boolean;
   bestseller?: boolean;
-  specs: string[];
-}
+  description: string;
+  features: string[];
+  specifications: {
+    Sweep?: string;
+    Motor?: string;
+    Blades?: string;
+    Warranty?: string;
+    Voltage?: string;
+    Finish?: string;
+    Speed?: string;
+    [key: string]: string | undefined;
+  } & Record<string, string>;
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -30,7 +42,7 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, x: 50 }, // Slide in from the right horizontally
+  hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
     x: 0,
@@ -42,14 +54,15 @@ export default function FeaturedProducts() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const featuredProducts = useMemo(() => {
-    return (products as Product[]).filter((product) => product.featured);
+    return (products as unknown as Product[]).filter(
+      (product) => product.featured,
+    );
   }, []);
 
-  // Native smooth scrolling logic for the chevron buttons
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       const { scrollLeft, clientWidth } = scrollContainerRef.current;
-      const scrollAmount = clientWidth * 0.75; // Scroll 75% of the visible container width
+      const scrollAmount = clientWidth * 0.75;
 
       scrollContainerRef.current.scrollTo({
         left:
@@ -69,7 +82,7 @@ export default function FeaturedProducts() {
     >
       {/* Background Ambient Glows */}
       <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/3 w-100 h-100 bg-primary/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container-width px-4 mx-auto max-w-7xl">
@@ -94,7 +107,7 @@ export default function FeaturedProducts() {
               className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl"
             >
               Best Selling{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary/70">
                 Fans
               </span>
             </h2>
@@ -107,7 +120,6 @@ export default function FeaturedProducts() {
 
           {/* Action Buttons: Slider Navigation + View All */}
           <div className="flex items-center gap-3 shrink-0">
-            {/* Left/Right controls hidden on mobile touch screens since native swipe works perfectly */}
             <div className="hidden md:flex items-center gap-2">
               <Button
                 variant="outline"
@@ -139,7 +151,7 @@ export default function FeaturedProducts() {
                   View All
                   <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                 </span>
-                <span className="absolute inset-0 -z-0 bg-gradient-to-r from-primary/5 to-primary/0 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                <span className="absolute inset-0 z-0 bg-linear-to-r from-primary/5 to-primary/0 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
               </Link>
             </Button>
           </div>
@@ -153,9 +165,8 @@ export default function FeaturedProducts() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }} // Hide scrollbar for Firefox/IE
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {/* Webkit scrollbar hider utility element injection */}
           <style
             dangerouslySetInnerHTML={{
               __html: `
@@ -168,8 +179,7 @@ export default function FeaturedProducts() {
             <motion.div
               key={product.id}
               variants={cardVariants}
-              // Compact card scaling sizing: 280px on small mobile, 320px on desktops
-              className="w-[280px] sm:w-[320px] shrink-0 snap-start snap-always group/card relative rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
+              className="w-70 sm:w-[320px] shrink-0 snap-start snap-always group/card relative rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
             >
               <ProductCard product={product} />
             </motion.div>
