@@ -54,13 +54,13 @@ export default function About() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* LEFT IMAGE CONTAINER */}
           <motion.div
-            initial={{ opacity: 0, y: 20, md: { x: -40, y: 0 } }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
             className="relative mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-muted shadow-2xl">
+            <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-border bg-muted shadow-2xl">
               <Image
                 src="/images/hero-fan.jpeg"
                 alt="Shri Ganesh Enterprises Workshop"
@@ -89,10 +89,10 @@ export default function About() {
 
           {/* RIGHT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, y: 20, md: { x: 40, y: 0 } }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-col justify-center text-center lg:text-left"
           >
             <div>
@@ -142,7 +142,7 @@ export default function About() {
             <div className="mt-10 flex justify-center lg:justify-start">
               <Button
                 size="lg"
-                className="rounded-full px-8 shadow-lg shadow-primary/20"
+                className="rounded-full px-8 shadow-lg shadow-primary/20 group"
                 asChild
               >
                 <Link href="#contact">
