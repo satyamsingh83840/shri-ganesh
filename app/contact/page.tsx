@@ -118,7 +118,7 @@ export default function ContactPage() {
                       WhatsApp Chat
                     </p>
                     <p className="text-sm sm:text-base font-medium">
-                      +91 99999 99999
+                      +91 9560112230
                     </p>
                   </div>
                 </a>
