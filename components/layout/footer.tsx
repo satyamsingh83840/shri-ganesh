@@ -102,7 +102,7 @@ export default function Footer() {
                     <p className="text-xs text-muted-foreground/60 font-medium">
                       Email Us
                     </p>
-                    <p className="font-medium break-all">info@shriganesh.com</p>
+                    <p className="font-medium break-all">adrs03613@gmail.com</p>
                   </div>
                 </a>
               </li>

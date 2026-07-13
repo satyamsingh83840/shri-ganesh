@@ -29,7 +29,7 @@ export default function ContactPage() {
     const message = formData.get("message") as string;
 
     // Replace with your company's actual WhatsApp number (include country code, no "+" or spaces)
-    const whatsappNumber = "919999999999";
+    const whatsappNumber = "919560112230";
 
     // Construct and encode the structured WhatsApp text layout
     const encodedText = encodeURIComponent(
@@ -105,7 +105,7 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* WhatsApp Option */}
                 <a
-                  href="https://wa.me/919999999999?text=Hello%20Shri%20Ganesh%20Enterprises,%20I'm%20interested%20in%20your%20products."
+                  href="https://wa.me/919560112230?text=Hello%20Shri%20Ganesh%20Enterprises,%20I'm%20interested%20in%20your%20products."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 text-muted-foreground hover:text-emerald-400 transition-colors"
@@ -136,14 +136,14 @@ export default function ContactPage() {
                       Email Us
                     </p>
                     <p className="text-sm sm:text-base font-medium break-all">
-                      info@shriganesh.com
+                      adrs03613@gmail.com
                     </p>
                   </div>
                 </a>
 
                 {/* Direct Call Option */}
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919560112230"
                   className="group flex items-start gap-4 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -154,7 +154,7 @@ export default function ContactPage() {
                       Call Us
                     </p>
                     <p className="text-sm sm:text-base font-medium">
-                      +91 99999 99999
+                      +91 9560112230
                     </p>
                   </div>
                 </a>
@@ -171,9 +171,9 @@ export default function ContactPage() {
                     <p className="text-sm sm:text-base font-medium leading-relaxed text-zinc-300">
                       Shri Ganesh Enterprises
                       <br />
-                      Plot No. 45, Industrial Area Phase II,
+                      A-2/111 Mohan Garden,
                       <br />
-                      Near Metro Station, New Delhi,
+                      Uttam Nagar, New Delhi,
                       <br />
                       Delhi - 110020, India
                     </p>
