@@ -41,7 +41,7 @@ export default function Navbar() {
   };
 
   // Replace with your company's actual WhatsApp number (include country code, no "+" or spaces)
-  const whatsappNumber = "919999999999";
+  const whatsappNumber = "919560112230";
   const encodedMessage = encodeURIComponent(
     "Hello Shri Ganesh Enterprises, I was exploring your website and wanted to know more about your products.",
   );

@@ -75,7 +75,7 @@ export default function Footer() {
             <ul className="mt-6 space-y-4 text-sm text-muted-foreground/90">
               <li>
                 <a
-                  href="tel:+91XXXXXXXXXX"
+                  href="tel:+919560112230"
                   className="group flex items-start gap-3 rounded-lg border border-transparent transition-colors hover:text-primary"
                 >
                   <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted border border-border group-hover:border-primary/20 group-hover:bg-primary/5">
@@ -85,7 +85,7 @@ export default function Footer() {
                     <p className="text-xs text-muted-foreground/60 font-medium">
                       Call Us
                     </p>
-                    <p className="font-medium">+91 XXXXX XXXXX</p>
+                    <p className="font-medium">+91 9560112230</p>
                   </div>
                 </a>
               </li>
@@ -116,7 +116,7 @@ export default function Footer() {
                     Location
                   </p>
                   <p className="font-medium leading-tight">
-                    Your Business Address, Phase-1, New Delhi, India
+                    A-2/111 Mohan Garden, Uttam Nagar, New Delhi, India
                   </p>
                 </div>
               </li>
@@ -142,7 +142,7 @@ export default function Footer() {
 
             {/* Contextual WhatsApp Mini-CTA underneath map */}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919560112230"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center justify-between rounded-xl bg-primary/5 border border-primary/10 px-4 py-2.5 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground group"
