@@ -128,7 +128,7 @@ export default function Footer() {
             <div className="relative h-full min-h-[160px] w-full overflow-hidden rounded-2xl border border-border/80 bg-muted/50 p-1.5 shadow-sm group">
               <iframe
                 title="Shri Ganesh Enterprises Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.196695679503!2d77.3117462!3d28.5037145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjh_NTAnMTMuNCJOIDc3wrAxOCc0Mi4zIkU!5e0!3m2!1sen!2sin!4v1700000000000!3m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3806.636261302982!2d77.0898988755016!3d28.65392157565309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM5JzE0LjEiTiA3N8KwMDUnMzIuOSJF!5e1!3m2!1sen!2sin!4v1783951564728!5m2!1sen!2sin"
                 className="h-full w-full rounded-[10px] border-0 grayscale contrast-[0.9] invert-[0.05] transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:invert-0"
                 allowFullScreen
                 loading="lazy"
