@@ -77,12 +77,13 @@ export default function FeaturedProducts() {
   return (
     <section
       id="products"
-      className="section-padding relative overflow-hidden bg-background py-20 md:py-28"
+      className="section-padding relative overflow-hidden bg-background py-16 md:py-24"
       aria-labelledby="featured-products-heading"
     >
       {/* Background Ambient Glows */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none">
-        <div className="absolute top-1/4 left-1/3 w-100 h-100 bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="container-width px-4 mx-auto max-w-7xl">
@@ -92,29 +93,29 @@ export default function FeaturedProducts() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
+          className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
         >
           <div className="max-w-xl space-y-3">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary shadow-sm">
-                <Sparkles className="h-3 w-3" />
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 backdrop-blur-sm px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-primary shadow-xs transition-colors duration-300 hover:bg-primary/15">
+                <Sparkles className="h-3.5 w-3.5 animate-pulse" />
                 Featured Collection
               </span>
             </div>
 
             <h2
               id="featured-products-heading"
-              className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl"
+              className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl md:text-4xl"
             >
               Best Selling{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary/70">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary/90 to-primary/60">
                 Fans
               </span>
             </h2>
 
             <p className="text-sm text-muted-foreground sm:text-base max-w-md leading-relaxed">
               Explore our premium collection of energy-efficient and stylish
-              fans.
+              fans designed for modern living.
             </p>
           </div>
 
@@ -124,34 +125,34 @@ export default function FeaturedProducts() {
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full h-10 w-10 border-muted-foreground/20 hover:border-primary hover:bg-transparent"
+                className="rounded-full h-9 w-9 border-border/60 bg-background/50 backdrop-blur-xs text-foreground/80 shadow-2xs transition-all duration-200 hover:border-primary hover:text-primary hover:bg-primary/5 active:scale-95"
                 onClick={() => scroll("left")}
                 aria-label="Scroll left"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="icon"
-                className="rounded-full h-10 w-10 border-muted-foreground/20 hover:border-primary hover:bg-transparent"
+                className="rounded-full h-9 w-9 border-border/60 bg-background/50 backdrop-blur-xs text-foreground/80 shadow-2xs transition-all duration-200 hover:border-primary hover:text-primary hover:bg-primary/5 active:scale-95"
                 onClick={() => scroll("right")}
                 aria-label="Scroll right"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
 
             <Button
               variant="outline"
-              className="group relative overflow-hidden rounded-full border-muted-foreground/20 h-10 px-5 transition-all duration-300 hover:border-primary hover:bg-transparent"
+              className="group relative overflow-hidden rounded-full border-border/60 bg-background/50 backdrop-blur-xs h-9 px-4.5 transition-all duration-300 hover:border-primary hover:shadow-sm active:scale-95"
               asChild
             >
               <Link href="/products">
-                <span className="relative z-10 flex items-center text-xs font-medium tracking-wide">
+                <span className="relative z-10 flex items-center text-xs font-semibold tracking-wide text-foreground group-hover:text-primary transition-colors duration-200">
                   View All
                   <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1" />
                 </span>
-                <span className="absolute inset-0 z-0 bg-linear-to-r from-primary/5 to-primary/0 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                <span className="absolute inset-0 z-0 bg-linear-to-r from-primary/10 to-primary/0 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
               </Link>
             </Button>
           </div>
@@ -164,7 +165,7 @@ export default function FeaturedProducts() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth"
+          className="flex gap-5 sm:gap-6 overflow-x-auto pb-6 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <style
@@ -179,7 +180,11 @@ export default function FeaturedProducts() {
             <motion.div
               key={product.id}
               variants={cardVariants}
-              className="w-70 sm:w-[320px] shrink-0 snap-start snap-always group/card relative rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
+              /* 
+                 Reduced width from 320px to w-[250px] sm:w-[270px] lg:w-[285px].
+                 This naturally shrinks the vertical height of the child ProductCard.
+              */
+              className="w-[250px] sm:w-[270px] lg:w-[285px] shrink-0 snap-start snap-always group/card relative rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-primary/10 focus-within:ring-2 focus-within:ring-primary/50"
             >
               <ProductCard product={product} />
             </motion.div>

@@ -100,7 +100,7 @@ export default function Hero() {
               <div className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-50/50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-900">
                 <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">
-                  2 Year Warranty
+                  1 Year Warranty
                 </span>
               </div>
               <div className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-50/50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-900">

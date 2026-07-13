@@ -21,17 +21,6 @@ const categories = [
     image: "/images/categories/table-fan.jpg",
     description: "Powerful cooling on demand for desks and rooms.",
   },
-  {
-    title: "Adjust Fan",
-    image: "/images/categories/adjust-fan.jpg",
-    description:
-      "Versatile industrial layout choices with directional airflow.",
-  },
-  {
-    title: "Wall/Table Fan",
-    image: "/images/categories/wall-table-fan.jpg",
-    description: "Multi-purpose wall mounts or standard table use.",
-  },
 ];
 
 export default function Categories() {

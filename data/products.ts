@@ -1,80 +1,10 @@
-// const products = [
-//   {
-//     id: 1,
-//     slug: "sg-aura-1200",
-//     name: "SG Aura 1200",
-//     category: "BLDC Fan",
-//     price: 2999,
-
-//     images: [
-//       "/images/products/sg-aura-1.webp",
-//       "/images/products/sg-aura-2.webp",
-//     ],
-
-//     featured: true,
-//     bestseller: true,
-
-//     description:
-//       "The SG Aura 1200 is a premium BLDC ceiling fan designed for modern homes. It delivers powerful airflow with silent operation and excellent energy efficiency.",
-
-//     features: [
-//       "Energy Efficient",
-//       "Silent Operation",
-//       "Remote Control",
-//       "Premium Finish",
-//     ],
-
-//     specifications: {
-//       Sweep: "1200 mm",
-//       Motor: "BLDC",
-//       Blades: "3",
-//       Warranty: "5 Years",
-//       Voltage: "220-240V",
-//       Finish: "Premium Matte",
-//       Speed: "380 RPM",
-//     },
-//   },
-
-//   {
-//     id: 2,
-//     slug: "sg-elite",
-//     name: "SG Elite",
-//     category: "Ceiling Fan",
-//     price: 2499,
-
-//     images: [
-//       "/images/products/sg-elite-1.webp",
-//       "/images/products/sg-elite-2.webp",
-//     ],
-
-//     featured: true,
-//     bestseller: false,
-
-//     description:
-//       "SG Elite combines elegant looks with powerful airflow, making it ideal for homes and offices.",
-
-//     features: ["Copper Motor", "Premium Finish", "High Speed", "Low Noise"],
-
-//     specifications: {
-//       Sweep: "1200 mm",
-//       Motor: "Copper",
-//       Blades: "3",
-//       Warranty: "2 Years",
-//       Voltage: "220-240V",
-//       Finish: "Glossy",
-//       Speed: "390 RPM",
-//     },
-//   },
-// ];
-
-// export default products;
 const products = [
   {
     id: 1,
-    slug: "aixal-exhaust-fan-4",
-    name: 'AIXAL EXHAUST FAN -4"',
-    category: "Exhaust Fan",
-    price: 700,
+    slug: "ventilation-fan-8",
+    name: "VENTILATION FAN 8 INCH",
+    category: "Ventilation Fan",
+    price: 840,
     images: [
       "/images/products/aixal-exhaust-fan-4-1.webp",
       "/images/products/aixal-exhaust-fan-4-2.webp",
@@ -82,19 +12,30 @@ const products = [
     featured: true,
     bestseller: true,
     description:
-      'AIXAL EXHAUST FAN -4" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
+      "Compact 8-inch ventilation fan with powerful airflow, low noise, and energy-efficient performance for homes, kitchens, bathrooms, and offices.",
+    features: [
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
+    ],
     specifications: {
-      Category: "Exhaust Fan",
+      Category: "Ventilation Fan",
+      Size: "8 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
     },
   },
   {
     id: 2,
     slug: "aixal-exhaust-fan-6",
-    name: 'AIXAL EXHAUST FAN-6"',
+    name: "AXIAL EXHAUST FAN 6 INCH",
     category: "Exhaust Fan",
-    price: 870,
+    price: 880,
     images: [
       "/images/products/aixal-exhaust-fan-6-1.webp",
       "/images/products/aixal-exhaust-fan-6-2.webp",
@@ -102,19 +43,164 @@ const products = [
     featured: true,
     bestseller: true,
     description:
-      'AIXAL EXHAUST FAN-6" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
+      "Compact 6-inch axial exhaust fan with powerful airflow, low noise, and energy-efficient performance for kitchens, bathrooms, and small spaces.",
+
+    features: [
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
+    ],
+
     specifications: {
       Category: "Exhaust Fan",
+      Size: "6 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
     },
   },
   {
     id: 3,
-    slug: "ventilation-fan-10",
-    name: 'Ventilation fan 10"',
+    slug: "aixal-exhaust-fan-4",
+    name: "AXIAL EXHAUST FAN 4 INCH",
+    category: "Exhaust Fan",
+    price: 720,
+    images: [
+      "/images/products/aixal-exhaust-fan-6-1.webp",
+      "/images/products/aixal-exhaust-fan-6-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Compact 4-inch axial exhaust fan with powerful airflow, low noise, and energy-efficient performance for kitchens, bathrooms, and small spaces.",
+
+    features: [
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
+    ],
+
+    specifications: {
+      Category: "Exhaust Fan",
+      Size: "4 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
+    },
+  },
+  {
+    id: 4,
+    slug: "wall-cum-table-fan-14",
+    name: "WALL CUM TABLE FAN 14 INCH (MOVING)",
+    category: "Table Fan",
+    price: 1500,
+    images: [
+      "/images/products/ventilation-fan-10-1.webp",
+      "/images/products/ventilation-fan-10-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Versatile 14-inch wall cum table fan with oscillation, powerful airflow, and energy-efficient cooling for home and office use.",
+
+    features: [
+      "Wall & Table Use",
+      "Oscillating Head",
+      "Powerful Airflow",
+      "Low Noise",
+      "Durable Build",
+      "Easy Installation",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "14 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+      Color: "White",
+    },
+  },
+  {
+    id: 5,
+    slug: "wall-cum-table-fan-10",
+    name: "WALL CUM TABLE FAN 10 INCH (MOVING)",
+    category: "Table Fan",
+    price: 1200,
+    images: [
+      "/images/products/ventilation-fan-10-1.webp",
+      "/images/products/ventilation-fan-10-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Versatile 10-inch wall cum table fan with oscillation, powerful airflow, and energy-efficient cooling for home and office use.",
+
+    features: [
+      "Wall & Table Use",
+      "Oscillating Head",
+      "Powerful Airflow",
+      "Low Noise",
+      "Durable Build",
+      "Easy Installation",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "10 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+      Color: "White",
+    },
+  },
+  {
+    id: 6,
+    slug: "wall-cum-table-fan-9-black",
+    name: "WALL CUM TABLE FAN 9 INCH BLACK",
+    category: "Table Fan",
+    price: 880,
+    images: [
+      "/images/products/ventilation-fan-10-1.webp",
+      "/images/products/ventilation-fan-10-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Compact 9-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "9 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+      Color: "Black",
+    },
+  },
+  {
+    id: 7,
+    slug: "wall-cum-table-fan-12-black",
+    name: "WALL CUM TABLE FAN 12 INCH BLACK",
     category: "Ventilation Fan",
-    price: 950,
+    price: 1060,
     images: [
       "/images/products/ventilation-fan-10-1.webp",
       "/images/products/ventilation-fan-10-2.webp",
@@ -122,19 +208,96 @@ const products = [
     featured: true,
     bestseller: true,
     description:
-      'Ventilation fan 10" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
+      "Compact 12-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
     specifications: {
-      Category: "Ventilation Fan",
+      Category: "Table Fan",
+      Size: "12 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+      Color: "Black",
     },
   },
   {
-    id: 4,
-    slug: "ventilation-fan-8",
-    name: "Ventilation fan 8 ",
-    category: "Ventilation Fan",
-    price: 790,
+    id: 8,
+    slug: "wall-cum-table-fan-9",
+    name: "WALL CUM TABLE FAN 9 INCH ",
+    category: "Table Fan",
+    price: 880,
+    images: [
+      "/images/products/ventilation-fan-10-1.webp",
+      "/images/products/ventilation-fan-10-2.webp",
+    ],
+    featured: true,
+    bestseller: true,
+    description:
+      "Compact 9-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "9 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+    },
+  },
+  {
+    id: 9,
+    slug: "wall-cum-table-fan-12",
+    name: "WALL CUM TABLE FAN 12 INCH ",
+    category: "Table Fan",
+    price: 1040,
+    images: [
+      "/images/products/ventilation-fan-10-1.webp",
+      "/images/products/ventilation-fan-10-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Compact 12-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "12 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall / Table",
+    },
+  },
+  {
+    id: 10,
+    slug: "decorative-exhaust-fan-4",
+    name: " DECORATIVE EXHAUST FAN 4 INCH",
+    category: "Exhaust Fan",
+    price: 720,
     images: [
       "/images/products/ventilation-fan-8-1.webp",
       "/images/products/ventilation-fan-8-2.webp",
@@ -142,19 +305,65 @@ const products = [
     featured: false,
     bestseller: false,
     description:
-      'Ventilation fan 8 " offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
+      "Stylish 4-inch decorative exhaust fan with efficient ventilation, low noise, and energy-saving performance for bathrooms and kitchens.",
+
+    features: [
+      "Modern Design",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+    ],
+
     specifications: {
-      Category: "Ventilation Fan",
+      Category: "Exhaust Fan",
+      Size: "4 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
     },
   },
   {
-    id: 5,
-    slug: "ventilation-fan-6",
-    name: 'Ventilation fan 6"',
-    category: "Ventilation Fan",
-    price: 710,
+    id: 11,
+    slug: "decorative-exhaust-fan-6",
+    name: " DECORATIVE EXHAUST FAN 6 INCH",
+    category: "Exhaust Fan",
+    price: 880,
+    images: [
+      "/images/products/ventilation-fan-8-1.webp",
+      "/images/products/ventilation-fan-8-2.webp",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Stylish 6-inch decorative exhaust fan with efficient ventilation, low noise, and energy-saving performance for bathrooms and kitchens.",
+
+    features: [
+      "Modern Design",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+    ],
+
+    specifications: {
+      Category: "Exhaust Fan",
+      Size: "6 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
+    },
+  },
+  {
+    id: 12,
+    slug: "exhaust-fan-12",
+    name: "EXHAUST FAN 12 INCH",
+    category: "Exhaust Fan",
+    price: 1120,
     images: [
       "/images/products/ventilation-fan-6-1.webp",
       "/images/products/ventilation-fan-6-2.webp",
@@ -162,19 +371,65 @@ const products = [
     featured: true,
     bestseller: true,
     description:
-      'Ventilation fan 6" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
+      "Powerful 12-inch exhaust fan with high airflow, low noise, and energy-efficient ventilation for homes, offices, and commercial spaces.",
+
+    features: [
+      "High Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
+    ],
+
     specifications: {
-      Category: "Ventilation Fan",
+      Category: "Exhaust Fan",
+      Size: "12 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "Black",
     },
   },
   {
-    id: 6,
-    slug: "welcome-table fan-9-black",
-    name: 'Welcome table fan 9" black',
-    category: "Table Fan",
+    id: 13,
+    slug: "exhaust-fan-9",
+    name: "EXHAUST FAN 9 INCH",
+    category: "Exhaust  Fan",
     price: 830,
+    images: [
+      "/images/products/ventilation-fan-6-1.webp",
+      "/images/products/ventilation-fan-6-2.webp",
+    ],
+    featured: true,
+    bestseller: true,
+    description:
+      "Powerful 9-inch exhaust fan with high airflow, low noise, and energy-efficient ventilation for homes, offices, and commercial spaces.",
+
+    features: [
+      "High Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
+    ],
+
+    specifications: {
+      Category: "Exhaust  Fan",
+      Size: "9 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
+    },
+  },
+  {
+    id: 14,
+    slug: "ventilation-fan-6",
+    name: "VENTILATION FAN 6 INCH",
+    category: "Ventilation Fan",
+    price: 760,
     images: [
       "/images/products/welcome-table-fan-9-black-1.webp",
       "/images/products/welcome-table-fan-9-black-2.webp",
@@ -182,211 +437,53 @@ const products = [
     featured: false,
     bestseller: false,
     description:
-      'Welcome table fan 9" black offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 7,
-    slug: "welcome-table-fan12black",
-    name: 'Welcome table fan12"black',
-    category: "Table Fan",
-    price: 1010,
-    images: [
-      "/images/products/welcome-table-fan12black-1.webp",
-      "/images/products/welcome-table-fan12black-2.webp",
+      "Compact 6-inch ventilation fan with efficient airflow, low noise, and energy-saving performance for kitchens and bathrooms.",
+    features: [
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
     ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Welcome table fan12"black offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 8,
-    slug: "welcome-table-fan-grey-9",
-    name: 'Welcome table fan grey 9"',
-    category: "Table Fan",
-    price: 910,
-    images: [
-      "/images/products/welcome-table-fan-grey-9-1.webp",
-      "/images/products/welcome-table-fan-grey-9-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Welcome table fan grey 9" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 9,
-    slug: "welcome-table-fan-grey12",
-    name: 'Welcome table fan grey12"',
-    category: "Table Fan",
-    price: 1080,
-    images: [
-      "/images/products/welcome-table-fan-grey12-1.webp",
-      "/images/products/welcome-table-fan-grey12-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Welcome table fan grey12" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 10,
-    slug: "adjust-fan-12",
-    name: 'Adjust fan 12"',
-    category: "Adjust Fan",
-    price: 980,
-    images: [
-      "/images/products/adjust-fan-12-1.webp",
-      "/images/products/adjust-fan-12-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Adjust fan 12" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Adjust Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 11,
-    slug: "adjust-fan-9",
-    name: 'Adjust fan 9"',
-    category: "Adjust Fan",
-    price: 750,
-    images: [
-      "/images/products/adjust-fan-9-1.webp",
-      "/images/products/adjust-fan-9-2.webp",
-    ],
-    featured: true,
-    bestseller: true,
-    description:
-      'Adjust fan 9" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Adjust Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 12,
-    slug: "welcome-table-fan-10",
-    name: 'Welcome table fan 10"',
-    category: "Table Fan",
-    price: 1070,
-    images: [
-      "/images/products/welcome-table-fan-10-1.webp",
-      "/images/products/welcome-table-fan-10-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Welcome table fan 10" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 13,
-    slug: "welcome-table-fan-14",
-    name: 'Welcome table fan 14"',
-    category: "Table Fan",
-    price: 11160,
-    images: [
-      "/images/products/welcome-table-fan-14-1.webp",
-      "/images/products/welcome-table-fan-14-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Welcome table fan 14" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 14,
-    slug: "ventilation-fan-8-black",
-    name: 'Ventilation fan 8" black',
-    category: "Ventilation Fan",
-    price: 830,
-    images: [
-      "/images/products/ventilation-fan-8-black-1.webp",
-      "/images/products/ventilation-fan-8-black-2.webp",
-    ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Ventilation fan 8" black offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
     specifications: {
       Category: "Ventilation Fan",
+      Size: "6 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
     },
   },
   {
-    id: 15,
-    slug: "wall-come-table-fan-moving-9",
-    name: 'Wall come table fan moving 9"',
-    category: "Wall/Table Fan",
-    price: 1200,
+    id: 5,
+    slug: "ventilation-fan-10",
+    name: "VENTILATION FAN 10 INCH",
+    category: "Ventilation Fan",
+    price: 1060,
     images: [
-      "/images/products/wall-come-table-fan-moving-9-1.webp",
-      "/images/products/wall-come-table-fan-moving-9-2.webp",
+      "/images/products/welcome-table-fan-9-black-1.webp",
+      "/images/products/welcome-table-fan-9-black-2.webp",
     ],
     featured: false,
     bestseller: false,
     description:
-      'Wall come table fan moving 9" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
-    specifications: {
-      Category: "Wall/Table Fan",
-      Voltage: "220-240V",
-    },
-  },
-  {
-    id: 16,
-    slug: "wall-come-table-fan-12",
-    name: 'Wall come table fan 12"',
-    category: "Wall/Table Fan",
-    price: 1500,
-    images: [
-      "/images/products/wall-come-table-fan-12-1.webp",
-      "/images/products/wall-come-table-fan-12-2.webp",
+      "Powerful 10-inch ventilation fan with high airflow, low noise, and energy-efficient performance for homes and offices.",
+    features: [
+      "High Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Easy Installation",
+      "Long Life",
     ],
-    featured: false,
-    bestseller: false,
-    description:
-      'Wall come table fan 12" offers reliable performance and high durability, designed efficiently for its category.',
-    features: ["Durable Build", "Efficient Performance", "Easy Installation"],
     specifications: {
-      Category: "Wall/Table Fan",
+      Category: "Ventilation Fan",
+      Size: "10 Inch",
       Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Mounting: "Wall Mount",
+      Color: "White",
     },
   },
 ];
