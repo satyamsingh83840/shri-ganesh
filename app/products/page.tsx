@@ -6,14 +6,7 @@ import { Search, X, SlidersHorizontal, ShoppingBag } from "lucide-react";
 import products from "@/data/products";
 import ProductCard from "@/components/products/product-card";
 
-const categories = [
-  "All",
-  "Exhaust Fan",
-  "Ventilation Fan",
-  "Table Fan",
-  "Adjust Fan",
-  "Wall/Table Fan",
-];
+const categories = ["All", "Exhaust Fan", "Ventilation Fan", "Table Fan"];
 
 type Product = {
   id: number;
