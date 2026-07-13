@@ -7,7 +7,7 @@ export function buyOnWhatsApp({
   price: number;
   image: string;
 }) {
-  const phone = "919999999999"; // Replace with your WhatsApp number
+  const phone = "919560112230"; // Replace with your WhatsApp number
 
   const message = `Hello Shri Ganesh Enterprises,
 
