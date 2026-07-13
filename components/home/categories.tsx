@@ -8,17 +8,20 @@ import { ArrowRight } from "lucide-react";
 const categories = [
   {
     title: "Exhaust Fan",
-    image: "/images/categories/exhaust-fan.jpg",
+    image:
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1783945784/Screenshot_20260713-175633.WhatsApp_jyad1j.png",
     description: "High-suction performance for kitchen ventilation.",
   },
   {
     title: "Ventilation Fan",
-    image: "/images/categories/ventilation-fan.jpg",
+    image:
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1783944966/Screenshot_20260713-174157.WhatsApp_xdrym6.png",
     description: "Keep fresh air flowing in heavy-use environments.",
   },
   {
     title: "Table Fan",
-    image: "/images/categories/table-fan.jpg",
+    image:
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1783945782/Screenshot_20260713-175525.WhatsApp_dqgvkc.png",
     description: "Powerful cooling on demand for desks and rooms.",
   },
 ];
