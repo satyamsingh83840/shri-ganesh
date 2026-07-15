@@ -154,7 +154,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
               buyOnWhatsApp({
                 name: product.name,
                 price: product.price,
-                image: selectedImage,
+                image: window.location.href,
               })
             }
           >
