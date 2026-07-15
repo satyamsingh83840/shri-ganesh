@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Share2, Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { buyOnWhatsApp } from "@/lib/whatsapp";
@@ -27,8 +28,32 @@ interface Props {
 }
 
 export default function ProductCard({ product }: Props) {
+  const [copied, setCopied] = useState(false);
   const displayImage =
     product.images?.[0] || "/images/products/placeholder.webp";
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const productUrl = `${window.location.origin}/products/${product.slug}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: product.name,
+          text: `Check out ${product.name} at Shri Ganesh Enterprises!`,
+          url: productUrl,
+        });
+      } catch (err) {
+        console.log("Error sharing:", err);
+      }
+    } else {
+      navigator.clipboard.writeText(productUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <motion.div
@@ -79,11 +104,11 @@ export default function ProductCard({ product }: Props) {
           ₹{product.price.toLocaleString("en-IN")}
         </h4>
 
-        {/* Tighter Action Buttons */}
-        <div className="pt-1 flex gap-2">
+        {/* Action Row - Mobile and Desktop Optimized */}
+        <div className="pt-1 flex items-center gap-1.5">
           <Button
             size="sm"
-            className="flex-1 rounded-xl text-xs font-semibold h-9 shadow-2xs"
+            className="flex-1 rounded-xl text-xs font-semibold h-9 shadow-2xs active:scale-98 transition-transform"
             onClick={() =>
               buyOnWhatsApp({
                 name: product.name,
@@ -92,17 +117,37 @@ export default function ProductCard({ product }: Props) {
               })
             }
           >
-            <MessageCircle className="mr-1.5 h-3.5 w-3.5" />
-            Buy Now
+            <MessageCircle className="mr-1 h-3.5 w-3.5 shrink-0" />
+            <span className="truncate">Buy Now</span>
           </Button>
 
+          {/* Share Action Button */}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleShare}
+            className={`rounded-xl h-9 w-9 p-0 shrink-0 border-border/70 transition-all duration-200 ${
+              copied
+                ? "bg-emerald-500/10 border-emerald-500 text-emerald-600"
+                : "text-muted-foreground hover:border-primary/50 hover:text-primary hover:bg-muted/40"
+            }`}
+            title={copied ? "Link Copied!" : "Share Product"}
+          >
+            {copied ? (
+              <Check className="h-3.5 w-3.5 stroke-[3]" />
+            ) : (
+              <Share2 className="h-3.5 w-3.5" />
+            )}
+          </Button>
+
+          {/* Details Page Link Button */}
           <Link href={`/products/${product.slug}`} passHref>
             <Button
               variant="outline"
               size="sm"
-              className="rounded-xl h-9 w-9 p-0 border-border/70 text-muted-foreground hover:border-primary hover:text-primary transition-colors duration-200"
+              className="rounded-xl h-9 w-9 p-0 shrink-0 border-border/70 text-muted-foreground hover:border-primary hover:text-primary hover:bg-muted/40 transition-colors duration-200"
             >
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Button>
           </Link>
         </div>

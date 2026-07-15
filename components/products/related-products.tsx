@@ -2,13 +2,13 @@
 
 import products from "@/data/products";
 import ProductCard from "./product-card";
+import { Sparkles } from "lucide-react";
 
 interface Props {
   currentSlug: string;
   category: string;
 }
 
-// Map the accurate type locally for cross-reference processing
 type ProductField = {
   id: number;
   slug: string;
@@ -34,28 +34,34 @@ export default function RelatedProducts({ currentSlug, category }: Props) {
   if (related.length === 0) return null;
 
   return (
-    <section className="w-full py-12 border-t border-neutral-100 dark:border-neutral-900/60">
-      <div className="mb-8 flex items-end justify-between px-4 sm:px-0">
+    <section className="w-full py-16 border-t border-border/60">
+      {/* Full-Width Header Element */}
+      <div className="mb-10 flex items-end justify-between px-4 sm:px-6 lg:px-8">
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-neutral-900 dark:text-neutral-50 md:text-3xl">
-            Related Collections
+          <div className="flex items-center gap-2 text-primary">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span className="text-[10px] font-bold uppercase tracking-widest block">
+              More from {category}
+            </span>
+          </div>
+          <h2 className="text-2xl font-black tracking-tight text-foreground sm:text-3xl mt-1">
+            Related Products
           </h2>
-          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mt-1">
-            More from {category}
-          </p>
         </div>
 
-        <span className="hidden sm:inline-flex text-xs font-medium text-neutral-400 dark:text-neutral-500 bg-neutral-100 dark:bg-neutral-900 px-3 py-1 rounded-full">
+        {/* Dynamic Mobile hint indication */}
+        <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground/80 border border-border/80 bg-muted/30 px-3 py-1.5 rounded-xl hidden sm:inline-flex shadow-3xs">
           Swipe to explore →
         </span>
       </div>
 
-      <div className="relative w-full">
-        <div className="no-scrollbar flex w-full gap-6 overflow-x-auto pb-6 pt-2 px-4 sm:px-0 snap-x snap-mandatory scroll-smooth">
+      {/* Premium Full-Width Horizontal Touch Carousel */}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex w-full gap-5 overflow-x-auto pb-8 pt-2 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {related.map((product) => (
             <div
               key={product.id}
-              className="w-[280px] shrink-0 snap-start transition-all duration-500 ease-out hover:-translate-y-1 sm:w-[320px]"
+              className="w-[250px] sm:w-[280px] md:w-[300px] shrink-0 snap-start transition-transform duration-300 ease-out active:scale-98"
             >
               <ProductCard product={product} />
             </div>
