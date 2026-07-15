@@ -73,15 +73,18 @@ export default function Categories() {
                 href={`/products?category=${encodeURIComponent(category.title)}`}
               >
                 <div className="group overflow-hidden rounded-[2rem] border border-border/80 bg-card transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  {/* Container updated with contain logic and matching background padding */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted/30 p-6">
                     <Image
                       src={category.image}
                       alt={category.title}
                       fill
-                      className="object-cover transition duration-700 ease-out group-hover:scale-110"
+                      sizes="(max-width: 640px) 280px, 340px"
+                      className="object-contain p-2 transition duration-700 ease-out group-hover:scale-105"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+                    {/* Dark gradient adjusted for object-contain background layout compatibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   <div className="p-6 relative">

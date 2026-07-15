@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Fan,
-  Phone,
-  Mail,
-  MapPin,
-  ArrowUpRight,
-  MessageSquareCode,
-} from "lucide-react";
+import { Fan, Phone, Mail, MapPin } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -24,8 +17,8 @@ export default function Footer() {
 
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Brand Column (Span 4) */}
-          <div className="space-y-6 lg:col-span-4">
+          {/* Brand Column (Span 5) */}
+          <div className="space-y-6 lg:col-span-5">
             <div className="flex items-center gap-3.5">
               <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-md shadow-primary/10">
                 <Fan className="h-5 w-5 animate-[spin_8s_linear_infinite]" />
@@ -47,8 +40,8 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation Links Column (Span 2) */}
-          <div className="lg:col-span-2">
+          {/* Navigation Links Column (Span 3) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
               Navigation
             </h4>
@@ -67,8 +60,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Details Column (Span 3) */}
-          <div className="lg:col-span-3">
+          {/* Contact Details Column (Span 4) */}
+          <div className="lg:col-span-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">
               Get In Touch
             </h4>
@@ -121,38 +114,6 @@ export default function Footer() {
                 </div>
               </li>
             </ul>
-          </div>
-
-          {/* Google Maps Card Column (Span 3) */}
-          <div className="flex flex-col lg:col-span-3">
-            <div className="relative h-full min-h-[160px] w-full overflow-hidden rounded-2xl border border-border/80 bg-muted/50 p-1.5 shadow-sm group">
-              <iframe
-                title="Shri Ganesh Enterprises Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3806.636261302982!2d77.0898988755016!3d28.65392157565309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM5JzE0LjEiTiA3N8KwMDUnMzIuOSJF!5e1!3m2!1sen!2sin!4v1783951564728!5m2!1sen!2sin"
-                className="h-full w-full rounded-[10px] border-0 grayscale contrast-[0.9] invert-[0.05] transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:contrast-100 group-hover:invert-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              {/* Decorative overlay badge */}
-              <div className="absolute bottom-3 right-3 flex items-center gap-1 rounded-md bg-background/90 backdrop-blur-md px-2 py-1 text-[10px] font-medium tracking-wide shadow-sm border border-border/40 pointer-events-none opacity-100 transition-opacity group-hover:opacity-0">
-                <MapPin className="h-3 w-3 text-primary" /> View Location
-              </div>
-            </div>
-
-            {/* Contextual WhatsApp Mini-CTA underneath map */}
-            <a
-              href="https://wa.me/919560112230"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center justify-between rounded-xl bg-primary/5 border border-primary/10 px-4 py-2.5 text-xs font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground group"
-            >
-              <span className="flex items-center gap-2">
-                <MessageSquareCode className="h-4 w-4" />
-                Quick Support via WhatsApp
-              </span>
-              <ArrowUpRight className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
           </div>
         </div>
 

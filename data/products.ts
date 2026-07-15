@@ -453,6 +453,72 @@ const products = [
       Color: "White",
     },
   },
+  {
+    id: 16,
+    slug: "wall-cum-table-fan-12-gray",
+    name: "WALL CUM TABLE FAN 12 INCH GRAY ",
+    category: "Table Fan",
+    price: 1040,
+    images: [
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1784095403/Screenshot_20260715-113117.WhatsApp_j1hwok.png",
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1784095403/Screenshot_20260715-113044.WhatsApp_lysqie.png",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Compact 12-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "12 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Color: "Gray",
+      Mounting: "Wall / Table",
+    },
+  },
+  {
+    id: 17,
+    slug: "wall-cum-table-fan-9-gray",
+    name: "WALL CUM TABLE FAN 9 INCH GRAY ",
+    category: "Table Fan",
+    price: 1040,
+    images: [
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1784095403/Screenshot_20260715-113140.WhatsApp_iohreq.png",
+      "https://res.cloudinary.com/dcgh3mayf/image/upload/v1784095403/Screenshot_20260715-113044.WhatsApp_lysqie.png",
+    ],
+    featured: false,
+    bestseller: false,
+    description:
+      "Compact 9-inch wall cum table fan with powerful airflow, low noise, and dual-use design for home and office cooling.",
+
+    features: [
+      "Wall & Table Use",
+      "Powerful Airflow",
+      "Low Noise",
+      "Energy Efficient",
+      "Durable Build",
+      "Compact Design",
+    ],
+
+    specifications: {
+      Category: "Table Fan",
+      Size: "9 Inch",
+      Voltage: "220-240V",
+      Frequency: "50 Hz",
+      Color: "Gray",
+      Mounting: "Wall / Table",
+    },
+  },
 ];
 
 export default products;

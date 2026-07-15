@@ -37,17 +37,18 @@ export default function ProductCard({ product }: Props) {
       className="group overflow-hidden rounded-2xl border border-border bg-card shadow-2xs transition-shadow duration-300 hover:shadow-md"
     >
       {/* Compact Image Container */}
-      <div className="relative overflow-hidden aspect-square w-full bg-muted/20">
+      <div className="relative overflow-hidden aspect-square w-full bg-muted/30 p-4">
         <Image
           src={displayImage}
           alt={product.name}
           fill
-          className="object-cover transition duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-contain p-2 transition duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none" />
 
         {/* Small Badges */}
-        <div className="absolute left-2.5 top-2.5 flex flex-col gap-1">
+        <div className="absolute left-2.5 top-2.5 flex flex-col gap-1 z-10">
           {product.featured && (
             <span className="rounded-md bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground shadow-xs">
               Featured
