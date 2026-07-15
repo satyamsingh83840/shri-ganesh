@@ -113,7 +113,7 @@ export default function ProductCard({ product }: Props) {
               buyOnWhatsApp({
                 name: product.name,
                 price: product.price,
-                image: `${window.location.href}/${product.slug}`,
+                image: `${window.location.href}${product.slug}`,
               })
             }
           >
