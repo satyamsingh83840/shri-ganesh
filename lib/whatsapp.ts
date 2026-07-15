@@ -1,11 +1,11 @@
 export function buyOnWhatsApp({
   name,
   price,
-  url,
+  image,
 }: {
   name: string;
   price: number;
-  url: string;
+  image: string;
 }) {
   const phone = "919560112230";
 
@@ -18,7 +18,7 @@ Model: ${name}
 Price: ₹${price.toLocaleString("en-IN")}
 
 Product Link:
-${url}
+${image}
 
 Please let me know the availability.
 
