@@ -1,13 +1,13 @@
 export function buyOnWhatsApp({
   name,
   price,
-  image,
+  url,
 }: {
   name: string;
   price: number;
-  image: string;
+  url: string;
 }) {
-  const phone = "919560112230"; // Replace with your WhatsApp number
+  const phone = "919560112230";
 
   const message = `Hello Shri Ganesh Enterprises,
 
@@ -17,8 +17,8 @@ Model: ${name}
 
 Price: ₹${price.toLocaleString("en-IN")}
 
-Image:
-${window.location.origin}${image}
+Product Link:
+${url}
 
 Please let me know the availability.
 
